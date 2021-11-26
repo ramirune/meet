@@ -44,3 +44,4 @@ npm run start
 ## App dependencies
 
 - gh-pages
+- googleapis
