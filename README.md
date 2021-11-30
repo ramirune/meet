@@ -45,3 +45,5 @@ npm run start
 
 - gh-pages
 - googleapis
+- enzyme
+- @wojtekmaj/enzyme-adapter-react-17 <!-- this is unofficial adapter, which is the same as the one for React16 but modified to work with React17 -->
