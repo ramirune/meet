@@ -4,14 +4,14 @@ class NumberOfEvents extends Component {
   state = {
     numberOfEvents: '',
   }
-  /* 
-    updateEventNumber = (event) => {
-      const value = event.target.value;
-      this.setState({
-        numberOfEvents: value,
-      });
-      this.props.updateEventNumber(value);
-    } */
+
+  updateEventNumber = (event) => {
+    const value = event.target.value;
+    this.setState({
+      numberOfEvents: value,
+    });
+    //this.props.updateEventNumber(value);
+  }
 
   render() {
     return (
@@ -21,7 +21,7 @@ class NumberOfEvents extends Component {
           type="text"
           className="number-events"
           value={this.props.numberOfEvents}
-          onChange={(e) => this.props.updateEventNumber(e)}
+          onChange={(e) => this.updateEventNumber(value)}
         />
       </div>
     );
