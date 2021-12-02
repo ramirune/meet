@@ -14,24 +14,25 @@ class App extends Component {
     numberOfEvents: 32,
   }
 
-  updateEvents = (location) => {
+  updateEvents = (location, numberOfEvents) => {
     getEvents().then((events) => {
       const locationEvents = (location === 'all') ?
         events :
         events.filter((event) => event.location === location);
-      const { numberOfEvents } = this.state;
+      const eventsToShow = locationEvents.slice(0, numberOfEvents);
       this.setState({
-        events: locationEvents.slice(0, numberOfEvents)
+        events: eventsToShow,
+        currentLocation: location,
       });
     });
   }
 
-  updateEventNumber = (eventCount) => {
-    const { currentLocation } = this.state;
+  updateEventNumber = (e) => {
+    const eventCount = e.target.value;
     this.setState({
       numberOfEvents: eventCount
     });
-    this.updateEvents(currentLocation, eventCount);
+    this.updateEvents(this.currentLocation, this.state.numberOfEvents);
   };
 
   componentDidMount() {
