@@ -1,4 +1,5 @@
 # MEET APP
+[Check the live project here](https://ramirune.github.io/meet/)
 
 ## Objective
 
