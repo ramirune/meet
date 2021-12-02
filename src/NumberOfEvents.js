@@ -15,6 +15,7 @@ class NumberOfEvents extends Component {
   render() {
     return (
       <div className="NumberOfEvents">
+        <p className="eventNr">Number of Events</p>
         <input
           type="text"
           className="number-events"
