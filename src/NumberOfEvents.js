@@ -21,7 +21,7 @@ class NumberOfEvents extends Component {
           type="text"
           className="number-events"
           value={this.props.numberOfEvents}
-          onChange={(e) => this.updateEventNumber(value)}
+          onChange={(e) => this.props.updateEventNumber(e)}
         />
       </div>
     );
