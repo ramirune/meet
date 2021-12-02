@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 class NumberOfEvents extends Component {
-  state = {
+  /* state = {
     numberOfEvents: '',
   }
 
@@ -11,7 +11,7 @@ class NumberOfEvents extends Component {
       numberOfEvents: value,
     });
     this.props.updateEventNumber(value);
-  }
+  } */
 
   render() {
     return (
