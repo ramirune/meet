@@ -8,11 +8,15 @@ import NumberOfEvents from './NumberOfEvents';
 import { extractLocations, getEvents } from './api';
 
 class App extends Component {
-  state = {
-    events: [],
-    locations: [],
-    numberOfEvents: 32,
-    currentLocation: 'all'
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      events: [],
+      locations: [],
+      numberOfEvents: 32,
+      currentLocation: 'all'
+    };
   }
 
   componentDidMount() {
@@ -30,26 +34,35 @@ class App extends Component {
     this.mounted = false;
   }
 
-  updateEvents = (location, numberOfEvents) => {
+  updateEvents = async (location, numberOfEvents) => {
     getEvents().then((events) => {
       const locationEvents = (location === 'all') ?
         events :
         events.filter((event) => event.location === location);
-      this.setState({
-        events: locationEvents.slice(0, this.state.numberOfEvents),
-        currentLocation: location
-      });
+      if (this.mounted) {
+        this.setState({
+          events: locationEvents.slice(0, this.state.numberOfEvents),
+          currentLocation: location,
+        });
+      }
     });
   }
 
-  updateNumberOfEvents = (eventCount) => {
-    const newNumber = eventCount
-    const { currentLocation } = this.state;
-    this.setState({
-      numberOfEvents: newNumber
-    });
-    this.updateEvents(currentLocation);
-  }
+  updateNumberOfEvents = async (e) => {
+    const newNumber = e.target.value ? parseInt(e.target.value) : 32;
+
+    if (newVal < 1 || newVal > 32) {
+      this.setState({
+        numberOfEvents: '32',
+      });
+    } else {
+      this.setState({
+        errorText: "",
+        numberOfEvents: newNumber,
+      });
+      this.updateEvents(this.state.currentLocation, this.state.numberOfEvents);
+    }
+  };
 
   getData = () => {
     if (this.mounted) {
