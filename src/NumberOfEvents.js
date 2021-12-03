@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class NumberOfEvents extends Component {
   state = {
     numberOfEvents: 32,
-  }
+  };
 
   handleInputChange = (event) => {
     const value = event.target.value;
@@ -15,7 +15,7 @@ class NumberOfEvents extends Component {
       this.setState({
         numberOfEvents: value,
       });
-      //this.props.updateNumberofEvents(value);
+      this.props.updateNumberofEvents(value);
     }
   };
 
