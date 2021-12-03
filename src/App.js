@@ -15,7 +15,7 @@ class App extends Component {
     currentLocation: 'all'
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     this.mounted = true;
     getEvents().then((events) => {
       this.setState({ events, locations: extractLocations(events) });
@@ -31,22 +31,21 @@ class App extends Component {
       const locationEvents = (location === 'all') ?
         events :
         events.filter((event) => event.location === location);
-
-      const { numberOfEvents } = this.state;
+      const showEvents = locationEvents.slice(0, this.state.numberOfEvents);
       this.setState({
-        events: locationEvents.slice(0, numberOfEvents),
+        events: showEvents,
         currentLocation: location
       });
     });
   }
 
-  updateNumberOfEvents = (e) => {
-    const eventCount = e.target.value;
+  updateNumberOfEvents = (number) => {
+    const newNumber = number;
     const { currentLocation } = this.state;
     this.setState({
-      numberOfEvents: eventCount
+      numberOfEvents: newNumber
     });
-    this.updateEvents(currentLocation, this.state.numberOfEvents);
+    this.updateEvents(currentLocation);
   }
 
   getData = () => {
