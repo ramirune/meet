@@ -15,10 +15,14 @@ class App extends Component {
     currentLocation: 'all'
   }
 
-  async componentDidMount() {
+  componentDidMount() {
+    const { numberOfEvents } = this.state;
     this.mounted = true;
     getEvents().then((events) => {
-      this.setState({ events, locations: extractLocations(events) });
+      this.setState({
+        events: events.slice(0, numberOfEvents),
+        locations: extractLocations(events)
+      });
     });
   }
 
@@ -26,15 +30,15 @@ class App extends Component {
     this.mounted = false;
   }
 
-  updateEvents = (location) => {
+  updateEvents = (location, numberOfEvents) => {
     getEvents().then((events) => {
       const locationEvents = (location === 'all') ?
         events :
         events.filter((event) => event.location === location);
-      const { numberOfEvents } = this.state;
       this.setState({
         events: locationEvents.slice(0, numberOfEvents),
-        currentLocation: location
+        currentLocation: location,
+        numberOfEvents: numberOfEvents,
       });
     });
   }
@@ -46,16 +50,16 @@ class App extends Component {
     });
     this.updateEvents(currentLocation, eventCount);
   }
-  /* 
-    getData = () => {
-      const { locations, events } = this.state;
-      const data = locations.map((location) => {
-        const number = events.filter((event) => event.location === location).length
-        const city = location.split(', ').shift()
-        return { city, number };
-      })
-      return data;
-    }; */
+
+  getData = () => {
+    const { locations, events } = this.state;
+    const data = locations.map((location) => {
+      const number = events.filter((event) => event.location === location).length
+      const city = location.split(', ').shift();
+      return { city, number };
+    });
+    return data;
+  };
 
   render() {
     return (
