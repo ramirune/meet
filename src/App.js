@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
 import './nprogress.css';
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
 import EventList from './EventList';
 import CitySearch from './CitySearch';
@@ -62,11 +61,23 @@ class App extends Component {
 
   render() {
     return (
-      <Container>
+      <Container className="app-container" fluid>
         <div className="App">
-          <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-          <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} />
-          <EventList events={this.state.events} />
+          <Row>
+            <Col>
+              <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} />
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <EventList events={this.state.events} />
+            </Col>
+          </Row>
         </div>
       </Container>
     );
