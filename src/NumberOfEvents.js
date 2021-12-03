@@ -5,7 +5,7 @@ class NumberOfEvents extends Component {
     numberOfEvents: 32,
   }
 
-  updateNumberofEvents = (event) => {
+  updateNumberofEvents = (number) => {
     if (number < 1 || number > 32) {
       this.setState({
         numberOfEvents: 32,
