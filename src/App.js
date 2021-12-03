@@ -41,14 +41,14 @@ class App extends Component {
     });
   }
 
-  /*   updateNumberOfEvents = (eventCount) => {
-      const { currentLocation } = this.state;
-      this.setState({
-        numberOfEvents: eventCount
-      });
-      this.updateEvents(currentLocation, eventCount);
-    }
-   */
+  updateNumberOfEvents = (eventCount) => {
+    const { currentLocation } = this.state;
+    this.setState({
+      numberOfEvents: eventCount
+    });
+    this.updateEvents(currentLocation, eventCount);
+  }
+
   getData = () => {
     const { locations, events } = this.state;
     const data = locations.map((location) => {
@@ -70,7 +70,7 @@ class App extends Component {
           </Row>
           <Row>
             <Col>
-              <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateEvents={this.updateEvents} />
+              <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} />
             </Col>
           </Row>
           <Row>
