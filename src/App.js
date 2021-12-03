@@ -70,7 +70,7 @@ class App extends Component {
           </Row>
           <Row>
             <Col>
-              <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} />
+              <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateEvents={this.updateEvents} />
             </Col>
           </Row>
           <Row>
