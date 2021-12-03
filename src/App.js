@@ -41,13 +41,13 @@ class App extends Component {
     });
   }
 
-  updateNumberOfEvents = (number) => {
-    const eventCount = number;
+  updateNumberOfEvents = (e) => {
+    const eventCount = e.target.value;
     const { currentLocation } = this.state;
     this.setState({
       numberOfEvents: eventCount
     });
-    this.updateEvents(currentLocation, eventCount);
+    this.updateEvents(currentLocation, this.state.numberOfEvents);
   }
 
   getData = () => {
