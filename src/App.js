@@ -34,7 +34,8 @@ class App extends Component {
         events.filter((event) => event.location === location);
       const { numberOfEvents } = this.state;
       this.setState({
-        events: locationEvents.slice(0, numberOfEvents)
+        events: locationEvents.slice(0, numberOfEvents),
+        currentLocation: location
       });
     });
   }
@@ -48,9 +49,9 @@ class App extends Component {
   }
 
   getData = () => {
-    const { locations, event } = this.state;
+    const { locations, events } = this.state;
     const data = locations.map((location) => {
-      const number = event.filter((event) => event.location === location).length
+      const number = events.filter((event) => event.location === location).length
       const city = location.split(', ').shift()
       return { city, number };
     })
