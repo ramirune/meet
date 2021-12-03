@@ -51,7 +51,7 @@ class App extends Component {
   updateNumberOfEvents = async (e) => {
     const newNumber = e.target.value ? parseInt(e.target.value) : 32;
 
-    if (newVal < 1 || newVal > 32) {
+    if (newNumber < 1 || newNumber > 32) {
       this.setState({
         numberOfEvents: '32',
       });
