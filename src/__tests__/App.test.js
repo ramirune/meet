@@ -3,6 +3,7 @@ import { shallow, mount } from "enzyme";
 import App from "../App";
 import { mockData } from "../mock-data";
 import { extractLocations, getEvents } from "../api";
+import { Container } from "react-bootstrap";
 
 
 import EventList from '../EventList';
@@ -70,4 +71,5 @@ describe('<App /> integration', () => {
     expect(AppWrapper.state('events')).toEqual(allEvents);
     AppWrapper.unmount();
   });
+
 });
