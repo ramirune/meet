@@ -42,14 +42,14 @@ class App extends Component {
     });
   }
 
-  updateNumberOfEvents = (eventCount) => {
-    const { currentLocation } = this.state;
-    this.setState({
-      numberOfEvents: eventCount
-    });
-    this.updateEvents(currentLocation, eventCount);
-  }
-
+  /*   updateNumberOfEvents = (eventCount) => {
+      const { currentLocation } = this.state;
+      this.setState({
+        numberOfEvents: eventCount
+      });
+      this.updateEvents(currentLocation, eventCount);
+    }
+   */
   getData = () => {
     const { locations, events } = this.state;
     const data = locations.map((location) => {
