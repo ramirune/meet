@@ -89,8 +89,7 @@ class App extends Component {
             <Col>
               <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
             </Col>
-          </Row>
-          <Row>
+            <Col />
             <Col>
               <NumberOfEvents numberOfEvents={this.state.numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} />
             </Col>
