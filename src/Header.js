@@ -8,7 +8,7 @@ function Header(prop) {
     <Container className="logo-container">
       <Row>
         <Col />
-        <Col xs={6}>
+        <Col xs={12}>
           <img src={logo} alt="Meet app logo" className="logo" />
         </Col>
         <Col />

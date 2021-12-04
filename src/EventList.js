@@ -12,7 +12,7 @@ class EventList extends Component {
           <Col md={10} sm={12}>
             <ul className="EventList row">
               {events.map(event =>
-                <li key={event.id} className="col-xl-4 col-lg-4 col-md-8 col-sm-12">
+                <li key={event.id} className="col-xl-4 col-lg-4 col-md-6 col-sm-8">
                   <Event event={event} />
                 </li>
               )}
