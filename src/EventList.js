@@ -8,7 +8,7 @@ class EventList extends Component {
     const { events } = this.props;
     return (
       <Container className="eventlist-container">
-        <Row className="event-list">
+        <Row className="d-flex justify-content-center event-list">
           <Col md={10} sm={12}>
             <ul className="EventList row">
               {events.map(event =>
