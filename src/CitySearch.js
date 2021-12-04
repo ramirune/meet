@@ -34,7 +34,7 @@ class CitySearch extends Component {
         <Row>
           <Col />
           <Col xs={6}>
-            <h4>Search</h4>
+            <p>Choose your nearest city</p>
             <input
               type="text"
               className="city"
