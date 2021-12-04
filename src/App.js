@@ -82,6 +82,9 @@ class App extends Component {
       <Container className="app-container">
         <div className="App">
           <Row>
+            <Header />
+          </Row>
+          <Row>
             <Col>
               <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
             </Col>
