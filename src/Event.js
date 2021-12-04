@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
+import './styles/Event.scss';
 
 class Event extends Component {
   state = {
@@ -17,26 +18,29 @@ class Event extends Component {
     const { event } = this.props;
     const { collapsed } = this.state;
     return (
-      <div className="Event">
-        <h3 className="summary">{event.summary}</h3>
-        <p className="start-date">{event.start.dateTime} ({event.start.timeZone})</p>
-        <br />
-        <p className="location">@{event.summary} | {event.location}</p>
+      <Card className="Event">
+        <Card.Header className="summary" as="h4">{event.summary}</Card.Header>
+        <Card.Body className="event-body">
+          <p className="start-date">{event.start.dateTime} ({event.start.timeZone})</p>
 
-        {!collapsed &&
-          <div className={`extra-details ${this.state.collapsed ? "hide" : "show"}`}>
-            <h3>About Event</h3>
-            <a href={event.htmlLink} role="noopener" target="_blank">
-              See deatails on Google calendar
-            </a>
-            <p className="event-description">{event.description}</p>
+          <p className="location">@{event.summary} | {event.location}</p>
 
-          </div>
-        }
-        <Button variant="primary" className={`${collapsed ? "show" : "hide"}-details-btn`} onClick={this.handleClick}>
-          {collapsed ? "show Details" : "Hide Details"}
-        </Button>
-      </div>
+          {!collapsed &&
+            <div className={`extra-details ${this.state.collapsed ? "hide" : "show"}`}>
+              <br />
+              <h6 className="about">About Event</h6>
+              <a href={event.htmlLink} role="noopener" target="_blank">
+                See deatails on Google calendar
+              </a>
+              <p className="event-description">{event.description}</p>
+
+            </div>
+          }
+          <Button variant="light" size="md" id="eventButton" className={`${collapsed ? "show" : "hide"}-details-btn`} onClick={this.handleClick}>
+            {collapsed ? "show Details" : "Hide Details"}
+          </Button>
+        </Card.Body>
+      </Card>
     );
   }
 }
