@@ -32,8 +32,7 @@ class CitySearch extends Component {
     return (
       <Container className="CitySearch">
         <Row>
-          <Col />
-          <Col xs={6}>
+          <Col>
             <p>Choose your nearest city</p>
             <input
               type="text"
@@ -54,7 +53,7 @@ class CitySearch extends Component {
               </li>
             </ul>
           </Col>
-          <Col />
+
         </Row>
       </Container>
     );
