@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "./img/meet.png";
+import './styles/Header.scss';
 
 function Header(prop) {
   return (
