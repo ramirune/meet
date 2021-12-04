@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './nprogress.css';
 import { Container, Row, Col } from "react-bootstrap";
-import './App.css';
+import './styles/App.scss';
 
 import EventList from './EventList';
 import CitySearch from './CitySearch';
