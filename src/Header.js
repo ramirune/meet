@@ -5,7 +5,7 @@ import { Row, Col, Container } from "react-bootstrap";
 
 function Header(prop) {
   return (
-    <Container className="logo-container">
+    <Container className="logo-container" fluid>
       <Row>
         <Col />
         <Col xs={12}>
