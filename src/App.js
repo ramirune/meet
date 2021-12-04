@@ -79,7 +79,7 @@ class App extends Component {
 
   render() {
     return (
-      <Container className="app-container" fluid>
+      <Container className="app-container">
         <div className="App">
           <Row>
             <Col>
