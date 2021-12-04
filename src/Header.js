@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../img/meet.png";
+import logo from "./img/meet.png";
 
 function Header(prop) {
   return (

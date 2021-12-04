@@ -6,6 +6,7 @@ import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
+import Header from './Header';
 import { extractLocations, getEvents } from './api';
 
 class App extends Component {
