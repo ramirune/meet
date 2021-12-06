@@ -21,14 +21,16 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const { numberOfEvents } = this.state;
     this.mounted = true;
     getEvents().then((events) => {
-      this.setState({
-        events: events.slice(0, numberOfEvents),
-        locations: extractLocations(events)
-      });
+      if (this.mounted) {
+        this.setState({
+          events: events.slice(0, numberOfEvents),
+          locations: extractLocations(events)
+        });
+      }
     });
   }
 
