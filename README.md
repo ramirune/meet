@@ -1,4 +1,5 @@
 # MEET APP
+
 [Check the live project here](https://ramirune.github.io/meet/)
 
 ## Objective
@@ -48,3 +49,5 @@ npm run start
 - googleapis
 - enzyme
 - @wojtekmaj/enzyme-adapter-react-17 <!-- this is unofficial adapter, which is the same as the one for React16 but modified to work with React17 -->
+- jest-cucumber
+- puppeteer

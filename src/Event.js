@@ -18,7 +18,7 @@ class Event extends Component {
     const { event } = this.props;
     const { collapsed } = this.state;
     return (
-      <Card className="Event">
+      <Card className="event">
         <Card.Header className="summary" as="h4">{event.summary}</Card.Header>
         <Card.Body className="event-body">
           <p className="start-date">{event.start.dateTime} ({event.start.timeZone})</p>

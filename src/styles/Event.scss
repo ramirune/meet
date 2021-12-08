@@ -1,4 +1,4 @@
-.Event {
+.event {
   margin-top: 10px;
   padding: 10px 10px 35px;
   margin-bottom: 20px;
@@ -6,12 +6,12 @@
   border: 1px solid #056983;
   border-radius: 4px;
   position: relative;
-  background-color: #0190af;  
+  background-color: #0190af;
 }
 
 #eventButton {
-  background-color: #00485a!important;
-  color: white!important;
+  background-color: #00485a !important;
+  color: white !important;
   position: absolute;
   right: 5px;
   bottom: 5px;
@@ -23,17 +23,17 @@
 
 .summary {
   color: white;
-  }
+}
 
-  .event-body {
-    background-color: white;
-    color: #056983
-  }
+.event-body {
+  background-color: white;
+  color: #056983;
+}
 
-  .location {
-    font-size: small;
-  }
+.location {
+  font-size: small;
+}
 
-  .about {
-    font-weight: bolder;
-  }
+.about {
+  font-weight: bolder;
+}
