@@ -49,7 +49,7 @@ input[type="number"] {
   position: relative;
 }
 
-.suggestions {
+/* .suggestions {
   width: 250px;
   position: absolute;
   z-index: 2;
@@ -74,7 +74,7 @@ input[type="number"] {
 
 .suggestions > li:hover {
   background-color: #78b8d6;
-}
+} */
 
 /* .event {
   padding: 10px 10px 35px;
@@ -128,10 +128,11 @@ input[type="number"] {
   font-family: sans-serif;
 }
 
-.Alert {
+/* .Alert {
   position: fixed;
-  top: 20px;
-}
+  top: 150px;
+  left: 200px;
+} */
 
 .data-vis-wrapper {
   display: flex;
@@ -197,8 +198,6 @@ input[type="number"] {
   letter-spacing: 0.2px;
   font-family: "Roboto";
 }
-
-
 
 @media only screen and (min-width: 992px) {
   .data-vis-wrapper {
