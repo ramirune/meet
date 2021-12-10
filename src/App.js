@@ -57,7 +57,6 @@ class App extends Component {
     const newNumber = e.target.value ? parseInt(e.target.value) : 32;
     if (newNumber < 1 || newNumber > 32) {
       return this.setState({
-        numberOfEvents: 0,
         errorText: 'Please choose a number between 1 and 32.',
       });
     } else {
