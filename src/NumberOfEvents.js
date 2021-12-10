@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import './styles/NumberOfEvents.scss';
+import { Alert, ErrorAlert } from './Alert';
 
 class NumberOfEvents extends Component {
   render() {
@@ -14,6 +15,9 @@ class NumberOfEvents extends Component {
               className="number-of-events"
               onChange={(e) => this.props.updateNumberOfEvents(e)} />
           </Col>
+        </Row>
+        <Row>
+          <ErrorAlert text={this.props.errorText} />
         </Row>
       </Container>
     );

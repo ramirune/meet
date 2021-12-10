@@ -17,7 +17,8 @@ class App extends Component {
       events: [],
       locations: [],
       numberOfEvents: 32,
-      currentLocation: 'all'
+      currentLocation: 'all',
+      errorText: '',
     };
   }
 
@@ -56,11 +57,11 @@ class App extends Component {
     const newNumber = e.target.value ? parseInt(e.target.value) : 32;
 
     if (newNumber < 1 || newNumber > 32) {
-      this.setState({
-        numberOfEvents: '32',
+      await this.setState({
+        errorText: 'Please choose a number between 1 and 32.',
       });
     } else {
-      this.setState({
+      await this.setState({
         errorText: "",
         numberOfEvents: newNumber,
       });
