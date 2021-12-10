@@ -18,7 +18,9 @@ class NumberOfEvents extends Component {
           </Col>
         </Row>
         <Row>
+          <Col>
           <ErrorAlert text={this.props.errorText} />
+          </Col>
         </Row>
       </Container>
     );
