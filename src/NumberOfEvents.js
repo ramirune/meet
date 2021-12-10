@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col, Container } from "react-bootstrap";
 import './styles/NumberOfEvents.scss';
-import { Alert, ErrorAlert } from './Alert';
+import { ErrorAlert } from './Alert';
 
 class NumberOfEvents extends Component {
   
