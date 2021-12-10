@@ -4,6 +4,7 @@ import './styles/NumberOfEvents.scss';
 import { Alert, ErrorAlert } from './Alert';
 
 class NumberOfEvents extends Component {
+  
   render() {
     return (
       <Container className="NumberOfEvents">
