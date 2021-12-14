@@ -20,7 +20,7 @@
 			"purpose": "any maskable"
 		}
 	],
-	"start_url": "https://ramirune.github.io/meet/",
+	"start_url": ".",
 	"display": "standalone",
 	"theme_color": "#000000",
 	"background_color": "#ffffff"
