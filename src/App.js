@@ -102,6 +102,15 @@ class App extends Component {
 			<Container className="app-container">
 				<div className="App">
 					<Row>
+						<WelcomeScreen
+							showWelcomeScreen={this.state.showWelcomeScreen}
+							getAccessToken={() => {
+								getAccessToken();
+							}}
+						/>
+					</Row>
+
+					<Row>
 						<Header />
 					</Row>
 					<Row>
@@ -124,12 +133,6 @@ class App extends Component {
 							<EventList events={this.state.events} />
 						</Col>
 					</Row>
-					<WelcomeScreen
-						showWelcomeScreen={this.state.showWelcomeScreen}
-						getAccessToken={() => {
-							getAccessToken();
-						}}
-					/>
 				</div>
 			</Container>
 		);
