@@ -99,7 +99,7 @@ class App extends Component {
 			return <div className="App" />;
 
 		return (
-			<Container className="app-container">
+			<Container className="app-container" fluid>
 				<div className="App">
 					<Row>
 						<Header />
@@ -125,12 +125,14 @@ class App extends Component {
 						</Col>
 					</Row>
 					<Row>
-						<WelcomeScreen
-							showWelcomeScreen={this.state.showWelcomeScreen}
-							getAccessToken={() => {
-								getAccessToken();
-							}}
-						/>
+						<Col xs={12} sm={10} md={8}>
+							<WelcomeScreen
+								showWelcomeScreen={this.state.showWelcomeScreen}
+								getAccessToken={() => {
+									getAccessToken();
+								}}
+							/>
+						</Col>
 					</Row>
 				</div>
 			</Container>

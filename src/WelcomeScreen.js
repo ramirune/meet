@@ -5,11 +5,15 @@ import welcomeLogo from './img/logo_welcome.png';
 
 function WelcomeScreen(props) {
 	return props.showWelcomeScreen ? (
-		<Container className="WelcomeScreen" fluid>
+		<Container className="WelcomeScreen">
 			<Row>
 				<Col>
-					<img src={welcomeLogo} alt="welcome screen logo" />
-					<h1>Welcome to the Meet app</h1>
+					<img
+						className="welcome-logo"
+						src={welcomeLogo}
+						alt="welcome screen logo"
+					/>
+					<h1 className="head">Welcome to the Meet app</h1>
 					<h4>
 						Log in to see upcoming events around the world for full-stack
 						developers
