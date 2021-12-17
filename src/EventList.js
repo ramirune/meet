@@ -11,9 +11,9 @@ class EventList extends Component {
 			<Container className="eventlist-container">
 				<Row className="d-flex justify-content-center event-list">
 					{!navigator.onLine ? (
-						<WarningAlert text="You ar offline, the events list has been loaded from the Cache!" />
+						<WarningAlert text="You are offline, the events list has been loaded from the Cache!" />
 					) : (
-						''
+						<WarningAlert text="" />
 					)}
 					<Col md={10} sm={12}>
 						<ul className="EventList row">
