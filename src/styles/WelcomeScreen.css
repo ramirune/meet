@@ -1,29 +1,9 @@
-body {
-	box-sizing: border-box;
-	margin: 0;
-	font-family: 'Rubik', sans-serif;
-	color: white;
-	background-image: linear-gradient(#056983, black);
-	background-repeat: no-repeat;
-	background-size: auto;
-	background-attachment: fixed;
-}
-
-.text {
-	font-size: 20px;
-	color: white;
-}
-
-.sign-text {
-	color: #00fff3;
-	font-size: 25px;
-}
 .WelcomeScreen {
 	position: fixed;
 	width: 100%;
 	height: 100%;
 	top: 0;
-	/* background: white; */
+	background: white;
 }
 
 .login-button {
@@ -42,17 +22,16 @@ body {
 	width: 184px;
 	height: 42px;
 	margin: 1rem;
-	background-color: white;
+	background-color: #4285f4;
 	border-radius: 2px;
 	box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .google-btn:hover {
-	box-shadow: 0 0 6px #5b8cb4;
+	box-shadow: 0 0 6px #4285f4;
 }
-
 .google-btn:active {
-	background: #dbe2ee;
+	background: #1669f2;
 }
 
 .google-icon-wrapper {
@@ -76,10 +55,10 @@ body {
 .btn-text {
 	float: right;
 	color: #fff;
-	font-size: 10px;
+	font-size: 14px;
 	letter-spacing: 0.2px;
 	font-family: 'Roboto';
-	background-color: #ffffff;
+	background-color: #4285f4;
 	width: 80%;
 	height: 100%;
 	text-align: center;
