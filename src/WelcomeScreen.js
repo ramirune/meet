@@ -7,6 +7,7 @@ function WelcomeScreen(props) {
 	return props.showWelcomeScreen ? (
 		<div className="WelcomeScreen">
 			<Row>
+				<Col></Col>
 				<Col>
 					<img
 						src={welcomeLogo}
@@ -14,6 +15,7 @@ function WelcomeScreen(props) {
 						className="welcomeLogo"
 					/>
 				</Col>
+				<Col></Col>
 			</Row>
 			<Row>
 				<Col>
@@ -47,7 +49,7 @@ o.svg"
 								rel="nofollow noopener"
 								class="btn-text"
 							>
-								<b>Sign in with google</b>
+								<b className="sign-text">Sign in with google</b>
 							</button>
 						</div>
 					</div>
