@@ -125,7 +125,8 @@ class App extends Component {
 						</Col>
 					</Row>
 					<Row>
-						<Col xs={12} sm={10} md={8}>
+						<Col></Col>
+						<Col xs={12} sm={12} md={10}>
 							<WelcomeScreen
 								showWelcomeScreen={this.state.showWelcomeScreen}
 								getAccessToken={() => {
@@ -133,6 +134,7 @@ class App extends Component {
 								}}
 							/>
 						</Col>
+						<Col></Col>
 					</Row>
 				</div>
 			</Container>

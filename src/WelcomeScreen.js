@@ -7,8 +7,7 @@ function WelcomeScreen(props) {
 	return props.showWelcomeScreen ? (
 		<Container className="WelcomeScreen">
 			<Row>
-				<Col></Col>
-				<Col xs={12} sm={12} md={10} lg={8}>
+				<Col>
 					<img
 						className="welcome-logo"
 						src={welcomeLogo}
@@ -47,7 +46,6 @@ o.svg"
 						Privacy policy
 					</a>
 				</Col>
-				<Col></Col>
 			</Row>
 		</Container>
 	) : null;
