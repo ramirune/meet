@@ -13,7 +13,7 @@ class EventList extends Component {
 					{!navigator.onLine ? (
 						<WarningAlert text="You are offline, the events list has been loaded from the Cache!" />
 					) : (
-						<WarningAlert text="" />
+						''
 					)}
 					<Col md={10} sm={12}>
 						<ul className="EventList row">
