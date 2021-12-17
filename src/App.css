@@ -6,10 +6,10 @@ body {
 	box-sizing: border-box;
 	margin: 0;
 	font-family: 'Rubik', sans-serif;
-	/* background-image: linear-gradient(rgb(209, 195, 195), #6dcff6);
+	background-image: linear-gradient(rgb(209, 195, 195), #6dcff6);
 	background-repeat: no-repeat;
 	background-size: auto;
-	background-attachment: fixed; */
+	background-attachment: fixed;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
