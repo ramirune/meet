@@ -14,7 +14,7 @@ function WelcomeScreen(props) {
 						alt="welcome screen logo"
 					/>
 					<h1 className="head">Welcome to the Meet app</h1>
-					<h4>
+					<h4 className="welcome-text">
 						Log in to see upcoming events around the world for full-stack
 						developers
 					</h4>
