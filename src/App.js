@@ -1,113 +1,139 @@
 import React, { Component } from 'react';
 import './nprogress.css';
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from 'react-bootstrap';
 import './App.css';
 
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import Header from './Header';
-import { extractLocations, getEvents } from './api';
+import { extractLocations, getEvents, checkToken, getAccessToken } from './api';
+import WelcomeScreen from './WelcomeScreen';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+	constructor(props) {
+		super(props);
 
-    this.state = {
-      events: [],
-      locations: [],
-      numberOfEvents: 32,
-      currentLocation: 'all',
-      errorText: '',
-    };
-  }
+		this.state = {
+			events: [],
+			locations: [],
+			numberOfEvents: 32,
+			currentLocation: 'all',
+			errorText: '',
+			showWelcomeScreen: undefined,
+		};
+	}
 
-  async componentDidMount() {
-    const { numberOfEvents } = this.state;
-    this.mounted = true;
-    getEvents().then((events) => {
-      if (this.mounted) {
-        this.setState({
-          events: events.slice(0, numberOfEvents),
-          locations: extractLocations(events)
-        });
-      }
-    });
-  }
+	async componentDidMount() {
+		const { numberOfEvents } = this.state;
+		this.mounted = true;
+		const accessToken = localStorage.getItem('access_token');
+		const isTokenValid = (await checkToken(accessToken)).error ? false : true;
+		const searchParams = new URLSearchParams(window.location.search);
+		const code = searchParams.get('code');
 
-  componentWillUnmount() {
-    this.mounted = false;
-  }
+		this.setState({ showWelcomeScreen: !(code || isTokenValid) });
+		if ((code || isTokenValid) && this.mounted) {
+			getEvents().then(events => {
+				if (this.mounted) {
+					this.setState({
+						events: events.slice(0, numberOfEvents),
+						locations: extractLocations(events),
+					});
+				}
+			});
+		}
+	}
 
-  updateEvents = async (location, numberOfEvents) => {
-    getEvents().then((events) => {
-      const locationEvents = (location === 'all') ?
-        events :
-        events.filter((event) => event.location === location);
-      if (this.mounted) {
-        this.setState({
-          events: locationEvents.slice(0, this.state.numberOfEvents),
-          currentLocation: location,
-        });
-      }
-    });
-  }
+	componentWillUnmount() {
+		this.mounted = false;
+	}
 
-  updateNumberOfEvents = async (e) => {
-    const newNumber = e.target.value ? parseInt(e.target.value) : 32;
-    if (newNumber < 1 || newNumber > 32) {
-      return this.setState({
-        errorText: 'Please choose a number between 1 and 32.',
-        numberOfEvents: 0,
-      });
-    } else {
-      this.setState({
-        errorText: "",
-        numberOfEvents: newNumber,
-      });
-      this.updateEvents(this.state.currentLocation, this.state.numberOfEvents);
-    }
-  };
+	updateEvents = async (location, numberOfEvents) => {
+		getEvents().then(events => {
+			const locationEvents =
+				location === 'all'
+					? events
+					: events.filter(event => event.location === location);
+			if (this.mounted) {
+				this.setState({
+					events: locationEvents.slice(0, this.state.numberOfEvents),
+					currentLocation: location,
+				});
+			}
+		});
+	};
 
-  getData = () => {
-    if (this.mounted) {
-      const { locations, events } = this.state;
-      const data = locations.map((location) => {
-        const number = events.filter((event) => event.location === location).length
-        const city = location.split(', ').shift();
-        return { city, number };
-      });
-      return data;
-    }
-  };
+	updateNumberOfEvents = async e => {
+		const newNumber = e.target.value ? parseInt(e.target.value) : 32;
+		if (newNumber < 1 || newNumber > 32) {
+			return this.setState({
+				errorText: 'Please choose a number between 1 and 32.',
+				numberOfEvents: 0,
+			});
+		} else {
+			this.setState({
+				errorText: '',
+				numberOfEvents: newNumber,
+			});
+			this.updateEvents(this.state.currentLocation, this.state.numberOfEvents);
+		}
+	};
 
-  render() {
-    return (
-      <Container className="app-container">
-        <div className="App">
-          <Row>
-            <Header />
-          </Row>
-          <Row>
-            <Col>
-              <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-            </Col>
-            <Col>
-              <NumberOfEvents 
-                numberOfEvents={this.state.numberOfEvents} 
-                updateNumberOfEvents={this.updateNumberOfEvents}
-                errorText={this.state.errorText} />
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <EventList events={this.state.events} />
-            </Col>
-          </Row>
-        </div>
-      </Container>
-    );
-  }
+	getData = () => {
+		if (this.mounted) {
+			const { locations, events } = this.state;
+			const data = locations.map(location => {
+				const number = events.filter(
+					event => event.location === location
+				).length;
+				const city = location.split(', ').shift();
+				return { city, number };
+			});
+			return data;
+		}
+	};
+
+	render() {
+		if (this.state.showWelcomeScreen === undefined)
+			return <div className="App" />;
+
+		return (
+			<Container className="app-container">
+				<div className="App">
+					<Row>
+						<Header />
+					</Row>
+					<Row>
+						<Col>
+							<CitySearch
+								locations={this.state.locations}
+								updateEvents={this.updateEvents}
+							/>
+						</Col>
+						<Col>
+							<NumberOfEvents
+								numberOfEvents={this.state.numberOfEvents}
+								updateNumberOfEvents={this.updateNumberOfEvents}
+								errorText={this.state.errorText}
+							/>
+						</Col>
+					</Row>
+					<Row>
+						<Col>
+							<EventList events={this.state.events} />
+						</Col>
+					</Row>
+					<WelcomeScreen
+						showWelcomeScreen={this.state.showWelcomeScreen}
+						getAccessToken={() => {
+							getAccessToken();
+						}}
+					/>
+				</div>
+			</Container>
+		);
+	}
 }
 
 export default App;
