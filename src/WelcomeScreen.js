@@ -24,7 +24,7 @@ function WelcomeScreen(props) {
 			</Row>
 			<Row>
 				<Col>
-					<p>
+					<p className="text">
 						Log in to see upcoming events around the world for full-stack
 						developers
 					</p>
