@@ -42,6 +42,7 @@ o.svg"
 					<a
 						href="https://ramirune.github.io/meet/privacy.html"
 						rel="nofollow noopener"
+						className="privacy-text"
 					>
 						Privacy policy
 					</a>
