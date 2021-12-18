@@ -4,21 +4,23 @@ body {
 	margin: 0;
 	background-image: linear-gradient(#319db8, black);
 	background-repeat: no-repeat;
-	background-size: auto;
-	background-attachment: fixed;
+	/* background-size: auto;
+	background-attachment: fixed; */
 }
 .WelcomeScreen {
 	margin-top: 0;
-	margin-left: -6rem;
+	margin-left: -50px;
+	padding-right: 80px;
+	padding-left: 50px;
 	justify-content: center;
 	text-align: center;
 	position: fixed;
-	width: 100vw;
-	height: 100vh;
+	width: 120vw;
+	height: 110vh;
 	top: 0;
 	background-image: linear-gradient(#319db8, black);
 	background-repeat: no-repeat;
-	background-size: auto;
+	background-size: cover;
 	background-attachment: fixed;
 }
 
@@ -44,12 +46,17 @@ body {
 }
 @media screen and (max-width: 500px) {
 	.head {
-		font-size: 15px;
+		font-size: 18px;
 	}
 }
 .welcome-text {
 	margin-top: 30px;
 	color: #e3e7e7 !important;
+}
+@media screen and (max-width: 500px) {
+	.welcome-text {
+		font-size: 12px;
+	}
 }
 
 .login-button {
