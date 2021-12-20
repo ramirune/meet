@@ -135,10 +135,9 @@ class App extends Component {
 								<EventGenre events={this.state.events} />
 							</Col>
 							<Col xs={12} md={8}>
-								<ResponsiveContainer className="scatter-chart" height={400}>
+								<ResponsiveContainer height={400}>
 									<ScatterChart
-										width={800}
-										height={400}
+										className="scatter"
 										margin={{
 											top: 20,
 											right: 20,

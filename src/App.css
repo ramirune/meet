@@ -157,7 +157,7 @@ input[type='number'] {
 .recharts-surface {
 	overflow: visible;
 }
-.scatter-chart {
+.scatter {
 	color: rgb(255, 255, 255) !important;
 }
 
