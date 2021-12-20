@@ -36,7 +36,7 @@ const EventGenre = ({ events }) => {
           {data.map((entry, index) => (
             <Cell key={`cell-${index}` fill={colors[index % colors.length]} name={entry.name} />
           ))}
-        </Pie>
+        
 			</PieChart>
 		</ResponsiveContainer>
 	);
