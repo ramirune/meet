@@ -105,7 +105,6 @@ class App extends Component {
 	};
 
 	render() {
-		const { events } = this.state;
 		if (this.state.showWelcomeScreen === undefined)
 			return <div className="App" />;
 
@@ -133,7 +132,7 @@ class App extends Component {
 					<Row>
 						<div className="data-vis-wrapper">
 							<Col>
-								<EventGenre events={events} />
+								<EventGenre events={this.state.events} />
 							</Col>
 							<Col>
 								<ResponsiveContainer className="scatter-chart" height={400}>
