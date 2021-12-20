@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from 'recharts';
+import './styles/EventGenre.scss';
 
 const EventGenre = ({ events }) => {
 	const [data, setData] = useState([]);
@@ -35,6 +36,7 @@ const EventGenre = ({ events }) => {
 					label={({ name, percent }) =>
 						`${name} ${(percent * 100).toFixed(0)}%`
 					}
+					className="pie-chart"
 				>
 					{data.map((entry, index) => (
 						<Cell
