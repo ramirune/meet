@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import './App.css';
 
 import EventList from './EventList';
-import EventGenre from './EventGenre';
+//import EventGenre from './EventGenre';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import Header from './Header';
