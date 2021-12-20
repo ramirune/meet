@@ -1,22 +1,30 @@
 import React, { useEffect, useState } from 'react';
-import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer, Legend } from 'recharts';
 
 const EventGenre = ({ events }) => {
 	const [data, setData] = useState([]);
-	const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#d61a1f'];
 	useEffect(() => {
-		const getData = () => {
-			const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'AngularJS'];
-			const data = genres.map(genre => {
-				const value = events.filter(event =>
-					event.summary.split(' ').include(genre)
-				).length;
-				return { name: genre, value: value };
-			});
-			return data;
-		};
 		setData(() => getData());
 	}, [events]);
+	const colors = [
+		'#d0427f',
+		'#f8a01f',
+		'#528272',
+		'#f15f4b',
+		'#7dbeb8',
+		'#5c69a0',
+	];
+	const getData = () => {
+		const genres = ['React', 'JavaScript', 'Node', 'jQuery', 'AngularJS'];
+		const data = genres.map(genre => {
+			const value = events.filter(event =>
+				event.summary.split(' ').includes(genre)
+			).length;
+
+			return { name: genre, value: value };
+		});
+		return data;
+	};
 
 	return (
 		<ResponsiveContainer height={400}>
@@ -34,16 +42,17 @@ const EventGenre = ({ events }) => {
 					}
 				>
 					{data.map((entry, index) => (
-						<Cell
-							key={`cell-${index}`}
-							fill={colors[index % colors.length]}
-							name={entry.name}
-						/>
+						<Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
 					))}
 				</Pie>
+				<Legend
+					layout="horizontal"
+					verticalAlign="top"
+					align="center"
+					height={45}
+				/>
 			</PieChart>
 		</ResponsiveContainer>
 	);
 };
-
 export default EventGenre;
