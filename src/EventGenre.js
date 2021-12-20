@@ -46,7 +46,7 @@ const EventGenre = ({ events }) => {
 				</Pie>
 				<Legend
 					layout="vertical"
-					verticalAlign="top"
+					verticalAlign="right"
 					align="center"
 					height={45}
 				/>
