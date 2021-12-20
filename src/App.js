@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import './App.css';
 
 import EventList from './EventList';
-//import EventGenre from './EventGenre';
+import EventGenre from './EventGenre';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import Header from './Header';
@@ -132,9 +132,9 @@ class App extends Component {
 					</Row>
 					<Row>
 						<div className="data-vis-wrapper">
-							{/* <Col>
+							<Col>
 								<EventGenre events={events} />
-							</Col> */}
+							</Col>
 							<Col>
 								<ResponsiveContainer height={400}>
 									<ScatterChart
