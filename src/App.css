@@ -1,4 +1,5 @@
 body {
+	color: white;
 	width: 100%;
 	box-sizing: border-box;
 	margin: 0;
@@ -149,7 +150,6 @@ input[type='number'] {
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	color: white;
 }
 .data-vis-wrapper .recharts-responsive-container {
 	min-width: 100%;
