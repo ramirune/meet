@@ -148,7 +148,7 @@ input[type='number'] {
 .data-vis-wrapper {
 	width: 80vw;
 	margin-top: 40px;
-	padding: 0 30px;
+	padding-right: 100px;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
