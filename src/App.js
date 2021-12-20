@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import './App.css';
 
 import EventList from './EventList';
+import EventGenre from './EventGenre';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import Header from './Header';
@@ -104,6 +105,7 @@ class App extends Component {
 	};
 
 	render() {
+		const { events } = this.state;
 		if (this.state.showWelcomeScreen === undefined)
 			return <div className="App" />;
 
@@ -129,8 +131,11 @@ class App extends Component {
 						</Col>
 					</Row>
 					<Row>
-						<Col>
-							<div className="data-vis-wrapper">
+						<div className="data-vis-wrapper">
+							<Col>
+								<EventGenre events={events} />
+							</Col>
+							<Col>
 								<ResponsiveContainer height={400}>
 									<ScatterChart
 										width={800}
@@ -154,8 +159,8 @@ class App extends Component {
 										<Scatter data={this.getData()} fill="#8884d8" />
 									</ScatterChart>
 								</ResponsiveContainer>
-							</div>
-						</Col>
+							</Col>
+						</div>
 					</Row>
 					<Row>
 						<Col>
