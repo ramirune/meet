@@ -158,7 +158,7 @@ input[type='number'] {
 	overflow: visible;
 }
 .scatter-chart {
-	color: rgb(255, 255, 255);
+	color: rgb(255, 255, 255) !important;
 }
 
 .login-button {
