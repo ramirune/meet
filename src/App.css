@@ -1,5 +1,4 @@
 body {
-	color: white;
 	width: 100%;
 	box-sizing: border-box;
 	margin: 0;
@@ -157,6 +156,9 @@ input[type='number'] {
 }
 .recharts-surface {
 	overflow: visible;
+}
+.scatter-chart {
+	color: rgb(255, 255, 255);
 }
 
 .login-button {
