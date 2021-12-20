@@ -134,8 +134,8 @@ class App extends Component {
 							<Col>
 								<EventGenre events={this.state.events} />
 							</Col>
-							<Col xs={12} md={8}>
-								<ResponsiveContainer height={400} width={850}>
+							<Col xs={12} md={10}>
+								<ResponsiveContainer height={400} width={800}>
 									<ScatterChart
 										margin={{
 											top: 20,
@@ -166,7 +166,7 @@ class App extends Component {
 					</Row>
 					<Row>
 						<Col></Col>
-						<Col xs={12} sm={12} md={10}>
+						<Col xs={12} sm={12} md={12} lg={12}>
 							<WelcomeScreen
 								showWelcomeScreen={this.state.showWelcomeScreen}
 								getAccessToken={() => {
