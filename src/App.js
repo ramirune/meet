@@ -135,7 +135,7 @@ class App extends Component {
 								<EventGenre events={this.state.events} />
 							</Col>
 							<Col xs={12} md={8}>
-								<ResponsiveContainer height={400} width={1000}>
+								<ResponsiveContainer height={400} width={850}>
 									<ScatterChart
 										margin={{
 											top: 20,
@@ -145,12 +145,7 @@ class App extends Component {
 										}}
 									>
 										<CartesianGrid />
-										<XAxis
-											type="category"
-											dataKey="city"
-											name="city"
-											style={{ color: 'white' }}
-										/>
+										<XAxis type="category" dataKey="city" name="city" />
 										<YAxis
 											type="number"
 											dataKey="number"
