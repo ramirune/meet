@@ -129,7 +129,7 @@ class App extends Component {
 							/>
 						</Col>
 					</Row>
-					<Row justify-content-center>
+					<Row>
 						<div className="data-vis-wrapper">
 							<EventGenre events={this.state.events} />
 
