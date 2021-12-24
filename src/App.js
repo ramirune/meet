@@ -21,18 +21,14 @@ import {
 import WelcomeScreen from './WelcomeScreen';
 
 class App extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			events: [],
-			locations: [],
-			numberOfEvents: 32,
-			currentLocation: 'all',
-			errorText: '',
-			showWelcomeScreen: undefined,
-		};
-	}
+	state = {
+		events: [],
+		locations: [],
+		numberOfEvents: 32,
+		currentLocation: 'all',
+		errorText: '',
+		showWelcomeScreen: undefined,
+	};
 
 	async componentDidMount() {
 		const { numberOfEvents } = this.state;
@@ -59,7 +55,7 @@ class App extends Component {
 		this.mounted = false;
 	}
 
-	updateEvents = async (location, numberOfEvents) => {
+	updateEvents = async location => {
 		getEvents().then(events => {
 			const locationEvents =
 				location === 'all'
